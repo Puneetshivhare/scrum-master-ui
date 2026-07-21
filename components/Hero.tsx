@@ -2,13 +2,16 @@
 
 import { motion } from "framer-motion";
 import { content } from "@/content";
+import AgentNetwork from "./AgentNetwork";
+import AnimatedStat from "./AnimatedStat";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
   return (
     <section className="border-b border-line px-6 py-24">
-      <div className="mx-auto max-w-content">
+      <div className="mx-auto grid max-w-content gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12">
+      <div>
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -60,14 +63,19 @@ export default function Hero() {
           className="mt-12 grid grid-cols-3 gap-8 border-t border-line pt-8 sm:max-w-[480px]"
         >
           {content.stats.map((s) => (
-            <div key={s.label}>
-              <p className="text-[24px] font-semibold tracking-tight text-ink">
-                {s.value}
-              </p>
-              <p className="text-[12px] text-mute">{s.label}</p>
-            </div>
+            <AnimatedStat key={s.label} value={s.value} label={s.label} />
           ))}
         </motion.div>
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20, scale: 0.98 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.7, ease, delay: 0.2 }}
+        className="aspect-[21/16] w-full"
+      >
+        <AgentNetwork />
+      </motion.div>
       </div>
     </section>
   );
