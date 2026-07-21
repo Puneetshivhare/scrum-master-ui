@@ -34,5 +34,7 @@ export const content = {
   ],
   architecture: ["Admin UI (React)", "FastAPI orchestration", "Agent runtime", "MCP integrations"],
   githubUrl: "https://github.com/Puneetshivhare/Srum-Master",
-  status: "In development",
+  // Real product property, not a dev-stage indicator — access is limited by
+  // rate limits / data resourcing, not by how finished the project is.
+  status: "Read-only by default",
 };
