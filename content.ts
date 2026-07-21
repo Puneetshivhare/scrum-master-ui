@@ -1,5 +1,6 @@
 export const content = {
   projectName: "AI Scrum Master",
+  icon: "🗂️",
   tagline: "Automates 60-70% of Scrum Master busywork, with humans still in charge.",
   description:
     "An AI agile-ops system where six specialized agents run standups, watch for blockers, and report sprint health — read-only by default, with human approval required for anything high-risk.",
