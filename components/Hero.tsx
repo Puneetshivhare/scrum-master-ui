@@ -9,20 +9,22 @@ export default function Hero() {
   return (
     <section className="border-b border-line px-6 py-24">
       <div className="mx-auto max-w-content">
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease }}
-          className="mb-4 flex items-center gap-2 text-[12px] font-medium uppercase tracking-wide text-amber"
+          className="mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-surface1 px-3 py-1"
         >
-          <span aria-hidden>{content.icon}</span>
-          {content.status}
-        </motion.p>
+          <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-success" />
+          <span className="font-mono text-[12px] text-muteStrong">
+            {content.icon} {content.status}
+          </span>
+        </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease, delay: 0.05 }}
-          className="max-w-[720px] text-[44px] font-semibold leading-[1.1] tracking-tight sm:text-[56px]"
+          className="max-w-[720px] text-[44px] font-semibold leading-[1.1] tracking-tight text-ink sm:text-[58px] sm:leading-[1.05] sm:tracking-[-0.02em]"
         >
           {content.tagline}
         </motion.h1>
@@ -30,7 +32,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease, delay: 0.15 }}
-          className="mt-6 max-w-[560px] text-[15px] leading-relaxed text-mute"
+          className="mt-6 max-w-[560px] text-[15px] leading-relaxed text-muteStrong"
         >
           {content.description}
         </motion.p>
@@ -44,7 +46,7 @@ export default function Hero() {
           {content.badges.map((b) => (
             <span
               key={b}
-              className="rounded-full border border-line px-3 py-1 text-[12px] text-mute"
+              className="rounded-full border border-line bg-surface1 px-3 py-1 text-[12px] text-mute"
             >
               {b}
             </span>
@@ -59,7 +61,7 @@ export default function Hero() {
         >
           {content.stats.map((s) => (
             <div key={s.label}>
-              <p className="text-[26px] font-semibold tracking-tight">
+              <p className="text-[24px] font-semibold tracking-tight text-ink">
                 {s.value}
               </p>
               <p className="text-[12px] text-mute">{s.label}</p>
